@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&family=Montserrat:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
 
@@ -18,25 +18,25 @@
   </head>
   <body>
     <header class="page-header">
-      <div class="container">
+      <!-- <div class="container">
         <nav class="page-header__nav">
           <a href="" class="logo link"
             ><picture>
               <source
                 srcset="
-                  ./images/head/logo@1x.webp 1x,
-                  ./images/head/logo@2x.webp 2x
+                  ./images/logo/logo@1x.webp 1x,
+                  ./images/logo/logo@2x.webp 2x
                 "
                 type="image/webp"
               />
               <source
                 srcset="
-                  ./images/head/logo@1x.png 1x,
-                  ./images/head/logo@2x.png 2x
+                  ./images/logo/logo@1x.png 1x,
+                  ./images/logo/logo@2x.png 2x
                 "
               />
               <img
-                src="./images/head/logo@1x.png"
+                src="./images/logo/logo@1x.png"
                 alt="Logo Oh My Donut"
                 class="logo__img"
               /> </picture
@@ -61,20 +61,119 @@
               <a href="" class="header-nav__link link">Contacts</a>
             </li>
           </ul>
+          <button type="button" class="open-mobile-btn">
+            <svg class="open-mobile-btn__icon">
+              <use href="./images/svg/symbol-defs.svg#icon-menu"></use>
+            </svg>
+          </button>
         </nav>
+      </div> -->
+      <div class="mob-menu" data-menu>
+        <div class="mob-menu__container container">
+          <button class="mob-menu__close-btn" data-menu-close>
+            <svg class="mob-menu__close-icon">
+              <use href="./images/svg/symbol-defs.svg#icon-close-btn"></use>
+            </svg>
+          </button>
+          <a href="./main.html" class="mob-menu__logo"
+            ><picture>
+              <source
+                srcset="
+                  ./images/logo/logo@1x.webp 1x,
+                  ./images/logo/logo@2x.webp 2x
+                "
+                type="image/webp"
+              />
+              <source
+                srcset="
+                  ./images/logo/logo@1x.png 1x,
+                  ./images/logo/logo@2x.png 2x
+                "
+              />
+              <img
+                src="./images/logo/logo@1x.png"
+                alt="Logo Oh My Donut"
+                class="logo__img"
+              />
+            </picture>
+          </a>
+          <ul class="mob-menu__list list-style">
+            <li class="mob-menu__item">
+              <a href="" class="mob-menu__link">About us</a>
+            </li>
+            <li class="mob-menu__item">
+              <a href="" class="mob-menu__link">Program</a>
+            </li>
+            <li class="mob-menu__item">
+              <a href="" class="mob-menu__link">Speaker</a>
+            </li>
+            <li class="mob-menu__item">
+              <a href="" class="mob-menu__link">Price</a>
+            </li>
+            <li class="mob-menu__item">
+              <a href="" class="mob-menu__link">Reviws</a>
+            </li>
+            <li class="mob-menu__item">
+              <a href="" class="mob-menu__link">Contact</a>
+            </li>
+          </ul>
+          <ul class="list-style social-list">
+            <li class="social-list__item">
+              <a href="" class="social-list__link"
+                ><svg aria-label="Twitter" class="social-list__icon">
+                  <use href="./images/svg/symbol-defs.svg#icon-twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-list__item">
+              <a href="" class="social-list__link"
+                ><svg aria-label="Instagram" class="social-list__icon">
+                  <use href="./images/svg/symbol-defs.svg#icon-instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-list__item">
+              <a href="" class="social-list__link"
+                ><svg aria-label="Facebook" class="social-list__icon">
+                  <use href="./images/svg/symbol-defs.svg#icon-facebook"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
     <main>
-      <section class="hero">
-        <h1>Donut Masterclass with the Donut King</h1>
-        <h2>Hosted by Eva Green</h2>
-        <a href="" class="button">Register</a>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </section>
+      <!-- <section class="hero">
+        <div class="container">
+          <h1>Donut Masterclass with the Donut King</h1>
+          <h2>Hosted by Eva Green</h2>
+          <a href="" class="hero__button button">Register</a>
+          <ul class="social-list list-style">
+            <li class="social-list__item">
+              <a href="" class="social-list__link"
+                ><svg aria-label="Twitter" class="social-list__icon">
+                  <use href="./images/svg/symbol-defs.svg#icon-twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-list__item">
+              <a href="" class="social-list__link"
+                ><svg aria-label="Instagram" class="social-list__icon">
+                  <use href="./images/svg/symbol-defs.svg#icon-instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-list__item">
+              <a href="" class="social-list__link"
+                ><svg aria-label="Facebook" class="social-list__icon">
+                  <use href="./images/svg/symbol-defs.svg#icon-facebook"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section> -->
     </main>
   </body>
 </html>

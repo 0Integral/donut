@@ -1,0 +1,104 @@
+@media screen and (max-width: 767px) {
+    .mob-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+
+        font-weight: 500;
+        // opacity: 0;
+        // visibility: hidden;
+        // pointer-events: none;
+        transition: opacity var(--transition-dur-and-func), visibility var(--transition-dur-and-func);
+
+        &.is-open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        &__container {
+            height: 100%;
+            position: relative;
+            padding-left: 20px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__logo {
+            margin-bottom: 45px;
+        }
+
+        &__close-btn {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            background-color: transparent;
+            width: 32px;
+            height: 32px;
+            transform: translateX(-50%);
+        }
+
+        &__close-icon {
+            width: 19px;
+            height: 19px;
+            transition: fill var(--transition-dur-and-func);
+
+            .mob-menu__close-btn &:hover,
+            .mob-menu__close-btn &:focus {
+                fill: var(--color-accent);
+            }
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+            padding-bottom: 25px;
+        }
+
+        &__link {
+            font-family: 'Montserrat Alternates';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 34px;
+            transition: color var(--duration-cubic);
+            text-decoration: none;
+            padding: 10px 28px;
+
+            &:hover,
+            &:focus {
+                background-image: linear-gradient(180deg, rgba(248, 110, 103, 0.63) 0%, rgba(253, 86, 143, 0.86) 100%);
+                animation: gradient 150ms linear;
+                box-shadow: 0px 7px 27px -2px rgba(253, 88, 140, 0.35);
+                border-radius: 0px;
+                color: white;
+            }
+
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 420px) {
+    .mob-contact__item {
+        font-size: 30px;
+    }
+
+    .social-media__item {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .mob-menu {
+        display: none;
+    }
+}

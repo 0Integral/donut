@@ -1,0 +1,25 @@
+@keyframes gradient {
+    0% {
+        background-image: none;
+    }
+
+    25% {
+        background-image: linear-gradient(180deg, rgba(248, 110, 103, 0.15)0%,
+                rgba(253, 86, 143, 0.20) 100%);
+    }
+
+    50% {
+        background-image: linear-gradient(180deg, rgba(248, 110, 103, 0.30)0%,
+                rgba(253, 86, 143, 0.40) 100%);
+    }
+
+    75% {
+        background-image: linear-gradient(180deg, rgba(248, 110, 103, 0.45)0%,
+                rgba(253, 86, 143, 0.60) 100%);
+    }
+
+    100% {
+        background-image: linear-gradient(180deg, rgba(248, 110, 103, 0.63)0%,
+                rgba(253, 86, 143, 0.86) 100%);
+    }
+}

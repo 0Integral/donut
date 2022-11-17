@@ -1,12 +1,14 @@
 @import "./utils/variables";
 @import "./utils/visually-hidden";
 @import "./utils/normalize";
+@import "./utils/animation-gradient";
 
 @import "./bace/reset";
 @import "./bace/common";
 
 @import "./component/container";
 @import "./component/button";
+@import "./component/mob-menu";
 
 @import "./layout/header";
 @import "./layout/hero"

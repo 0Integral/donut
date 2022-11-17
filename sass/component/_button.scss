@@ -1,0 +1,13 @@
+.button {
+    text-decoration: none;
+    color: var(--accent-button);
+    line-height: 1.22;
+    padding: 8px 40px;
+    border-radius: 25px;
+    background-color: var(--background-button);
+
+    &:hover,
+    &:focus {
+        filter: drop-shadow(10px 15px 25px rgba(232, 183, 183, 0.45));
+    }
+}

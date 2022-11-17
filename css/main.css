@@ -1,7 +1,11 @@
 :root {
   --background-site: #E5E2E3;
   --color-main-text: #3C322D;
+  --accent-button: #fff;
+  --background-button: #F3848C;
   --duration-cubic: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --linear-grad: linear-gradient(180deg, rgba(248, 110, 103, 0.63) 0%, rgba(253, 86, 143, 0.86) 100%);
+  --animatian-grad: gradient 150ms linear;
 }
 
 .visually-hidden {
@@ -205,13 +209,6 @@ select {
 /**
  * Correct the inability to style clickable types in iOS and Safari.
  */
-button,
-[type=button],
-[type=reset],
-[type=submit] {
-  -webkit-appearance: button;
-}
-
 /**
  * Remove the inner border and padding in Firefox.
  */
@@ -300,7 +297,6 @@ textarea {
  * 2. Correct the outline style in Safari.
  */
 [type=search] {
-  -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
   /* 2 */
@@ -309,16 +305,11 @@ textarea {
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
-[type=search]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
 /**
  * 1. Correct the inability to style clickable types in iOS and Safari.
  * 2. Change font properties to `inherit` in Safari.
  */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
   /* 1 */
   font: inherit;
   /* 2 */
@@ -356,6 +347,23 @@ template {
   display: none;
 }
 
+@keyframes gradient {
+  0% {
+    background-image: none;
+  }
+  25% {
+    background-image: linear-gradient(180deg, rgba(248, 110, 103, 0.15) 0%, rgba(253, 86, 143, 0.2) 100%);
+  }
+  50% {
+    background-image: linear-gradient(180deg, rgba(248, 110, 103, 0.3) 0%, rgba(253, 86, 143, 0.4) 100%);
+  }
+  75% {
+    background-image: linear-gradient(180deg, rgba(248, 110, 103, 0.45) 0%, rgba(253, 86, 143, 0.6) 100%);
+  }
+  100% {
+    background-image: linear-gradient(180deg, rgba(248, 110, 103, 0.63) 0%, rgba(253, 86, 143, 0.86) 100%);
+  }
+}
 html {
   box-sizing: border-box;
 }
@@ -402,6 +410,11 @@ svg {
   list-style-type: none;
 }
 
+button {
+  border: none;
+  background-color: transparent;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   background-color: var(--background-site);
@@ -410,53 +423,212 @@ body {
 }
 
 .container {
-  width: 1280px;
-  padding: 0 16px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-.page-header {
-  padding-top: 36px;
+@media screen and (min-width: 480px) {
+  .container {
+    width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
-.page-header__nav {
-  display: flex;
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+    padding-left: 36px;
+    padding-right: 36px;
+  }
 }
-
-.logo {
-  margin-right: 55px;
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1280px;
+    padding: 0 16px;
+  }
 }
-
-.header-nav {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-.header-nav__link {
-  font-size: 18px;
+.button {
+  text-decoration: none;
+  color: var(--accent-button);
   line-height: 1.22;
-  padding: 4px 8px;
-  transition: color var(--duration-cubic);
+  padding: 8px 40px;
+  border-radius: 25px;
+  background-color: var(--background-button);
 }
-.header-nav__link:hover, .header-nav__link:focus {
-  background-image: linear-gradient(180deg, rgba(248, 110, 103, 0.63) 0%, rgba(253, 86, 143, 0.86) 100%);
-  animation: gradient 150ms linear;
-  box-shadow: 0px 7px 27px -2px rgba(253, 88, 140, 0.35);
-  border-radius: 0px;
-  color: white;
+.button:hover, .button:focus {
+  filter: drop-shadow(10px 15px 25px rgba(232, 183, 183, 0.45));
 }
-@keyframes gradient {
-  0% {
-    background-image: none;
+
+@media screen and (max-width: 767px) {
+  .mob-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    font-weight: 500;
+    transition: opacity var(--transition-dur-and-func), visibility var(--transition-dur-and-func);
   }
-  25% {
-    background-image: linear-gradient(180deg, rgba(248, 110, 103, 0.15) 0%, rgba(253, 86, 143, 0.2) 100%);
+  .mob-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
-  50% {
-    background-image: linear-gradient(180deg, rgba(248, 110, 103, 0.3) 0%, rgba(253, 86, 143, 0.4) 100%);
+  .mob-menu__container {
+    height: 100%;
+    position: relative;
+    padding-left: 20px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: flex;
+    flex-direction: column;
   }
-  75% {
-    background-image: linear-gradient(180deg, rgba(248, 110, 103, 0.45) 0%, rgba(253, 86, 143, 0.6) 100%);
+  .mob-menu__logo {
+    margin-bottom: 45px;
   }
-  100% {
+  .mob-menu__close-btn {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background-color: transparent;
+    width: 32px;
+    height: 32px;
+    transform: translateX(-50%);
+  }
+  .mob-menu__close-icon {
+    width: 19px;
+    height: 19px;
+    transition: fill var(--transition-dur-and-func);
+  }
+  .mob-menu__close-btn .mob-menu__close-icon:hover, .mob-menu__close-btn .mob-menu__close-icon:focus {
+    fill: var(--color-accent);
+  }
+  .mob-menu__list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    padding-bottom: 25px;
+  }
+  .mob-menu__link {
+    font-family: "Montserrat Alternates";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 34px;
+    transition: color var(--duration-cubic);
+    text-decoration: none;
+    padding: 10px 28px;
+  }
+  .mob-menu__link:hover, .mob-menu__link:focus {
     background-image: linear-gradient(180deg, rgba(248, 110, 103, 0.63) 0%, rgba(253, 86, 143, 0.86) 100%);
+    animation: gradient 150ms linear;
+    box-shadow: 0px 7px 27px -2px rgba(253, 88, 140, 0.35);
+    border-radius: 0px;
+    color: white;
   }
+}
+@media screen and (max-width: 420px) {
+  .mob-contact__item {
+    font-size: 30px;
+  }
+  .social-media__item {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .mob-menu {
+    display: none;
+  }
+}
+@media screen and (min-width: 0) {
+  .page-header {
+    padding-top: 16px;
+  }
+  .page-header__nav {
+    display: flex;
+  }
+  .logo {
+    margin-right: auto;
+  }
+  .header-nav {
+    display: none;
+  }
+  .open-mobile-btn__icon {
+    width: 30px;
+    height: 16px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .page-header {
+    padding-top: 36px;
+    position: absolute;
+  }
+  .page-header__nav {
+    display: flex;
+  }
+  .logo {
+    margin-right: 55px;
+  }
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .header-nav__link {
+    font-size: 18px;
+    line-height: 1.22;
+    padding: 4px 8px;
+    transition: color var(--duration-cubic);
+  }
+  .header-nav__link:hover, .header-nav__link:focus {
+    background-image: linear-gradient(180deg, rgba(248, 110, 103, 0.63) 0%, rgba(253, 86, 143, 0.86) 100%);
+    animation: gradient 150ms linear;
+    box-shadow: 0px 7px 27px -2px rgba(253, 88, 140, 0.35);
+    border-radius: 0px;
+    color: white;
+  }
+}
+.hero {
+  background-image: url(../../images/hero/back-des@1x.jpg);
+  padding-top: 170px;
+  padding-bottom: 80px;
+}
+.hero h1 {
+  font-family: "Montserrat Alternates";
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 1.08;
+  color: var(--color-main-text);
+  width: 60%;
+  margin-bottom: 20px;
+}
+.hero h2 {
+  font-family: "Montserrat Alternates";
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+.hero__button {
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.social-list {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.social-list__icon {
+  width: 16px;
+  height: 16px;
+}
+.social-list__link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=main.css.map */
